@@ -40,7 +40,7 @@ $(document).ready(function() {
 
             totalPriceAdd();
         });
-        // funktion för att räkna ut totalsumman när en produkt läggs till i varukorgen. (En annan variant av koden kommer behövas om man klickar på ta bort knapp)
+        // funktion för att räkna ut totalsumman när en produkt läggs till i varukorgen.
         function totalPriceAdd() {
             let totalPrice = 0;
             $(".cart-row")
@@ -58,16 +58,6 @@ $(document).ready(function() {
             $("#cart-list").remove($(this));
             totalPriceRemove();
         });
-        //funktion för att räkna ut nya summan när en produkt är borttagen
-        function totalPriceRemove() {
-            $(".cart-row")
-                .find(".product-price")
-                .each(function() {
-                    totalPrice -= parseFloat($(this).html());
-                });
-            document.getElementById("total").innerHTML =
-                "<strong>SUMMA:</strong>" + totalPrice + "<br>";
-        }
     });
 
     $("#order").click(function(event) {
