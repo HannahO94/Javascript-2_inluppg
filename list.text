@@ -1,0 +1,31 @@
+Fujifilm Superia X-tra 400 135/36
+KODAK GOLD 135/24 200
+KODAK Ektar 100 135/36
+KODAK Portra 160 135/36
+CineStill Xpro C-41 800 Tungsten 135/36
+ILFORD HARMAN SFX 200 135/36
+Kodak P3200 Tmax T-Max 3200 135-36
+Fujifilm Velvia 100 135/36
+Fujifilm Provia 100F 135/36
+EKTACHROME E100 36X1-DIA/FILM
+
+
+ÄNDRINGAR JAG HAR GJORT:
+
+- Ändrade filnamn på bilderna, 
+numererade dem utefter namnen ovan.
+
+- La in rätt bild i varje HTML-img-element.
+
+- Satte en tillfällig storlek på bilderna på CSS.
+
+- Skrev ett script-länkning till jQuery längst ner på
+HTML-filen, innan vanliga main.js.
+
+- Skrev ett script-länkning till main.js längst ner på
+HTML-filen.
+
+- Hittade hur man hämtar JSON-data in till HTML, med jQuery.
+jQuery-CDN lades till på HTML.
+
+- Skapat en till key-value-pair på JSON-filen med första bilden.

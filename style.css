@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    max-width: 500px;
+    max-height: 300px;
+}
+#product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 20%;
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    padding-left: 20px;
+}
+#cart-container {
+    grid-row: 1 / span 4;
+    grid-column: 4;
+}
