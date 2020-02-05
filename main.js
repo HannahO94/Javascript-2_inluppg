@@ -1,9 +1,10 @@
 $(document).ready(function() {
     $.getJSON("products.json", function(user) {
         let data = user.products;
+        //en loop som hämtar json data och för varje produkt skapas html taggar och produkterna appendas till produkt containern. En köp knapp skapas.
         $.each(data, function(i, name) {
             $("#product-container").append(
-                '<div class="card" style="width: 18rem;"' +
+                '<div class="product-card"' +
                     "<div>" +
                     "<img class='card-img-top'src=" +
                     data[i].img +
@@ -16,18 +17,25 @@ $(document).ready(function() {
                     data[i].price +
                     "</span>" +
                     "<span> kr </span>" +
-                    '<button class="btn btn-primary">köp</button>' +
+                    "<br>" +
+                    '<input type="number" max="10" min="1" value="1" class="product-qty" />' +
+                    '<button class="buy-btn btn-primary">köp</button>' +
                     "</p>" +
                     "</div>" +
                     "</div>"
             );
         });
-        $(".btn").click(function(event) {
+        //klick event på köp knappen. Hittar pris och produkt elementen.
+        $(".buy-btn").click(function(event) {
             event.preventDefault();
             let prod = $(this).parent();
             let litext = prod.find(".product");
             let liprice = prod.find(".price");
+            //hittar input för hur många av produkten som ska köpas.
+            let productQty = prod.find("input").val();
 
+            // skapar list-element till varje ny produkt i varukorgen. lägger till pris och en ta bort knapp. Varan läggs till sist i listan .
+            // antal produkter som man valt vid köpen hämtas ovan och skickas med till det nya inputfältet som skapas i list itemet i variabeln productQty
             $("#cart-list").append(
                 "<li class='cart-row'>" +
                     litext.text() +
@@ -35,13 +43,25 @@ $(document).ready(function() {
                     liprice.text() +
                     "</span>" +
                     "<span>kr</span>" +
+                    "<br>" +
+                    '<input type="number" max="10" min="1" value="' +
+                    productQty +
+                    '" />' +
+                    '<button class="remove-btn">Ta bort</button>' +
                     "</li>"
             );
 
-            totalPriceAdd();
+            //resetar inputfältet när man klickat på köp
+            let prodinput = prod.find(".product-qty");
+            prodinput.val("1");
+
+            //klick event för ta bort knapp läggs till varje gång ett nytt item skapas
+            $(".remove-btn").click(removeCartItem);
+            //funktionen som räknar ut totalsumman körs varje gång en produkt läggs till i varukorgen
+            getTotalCost();
         });
-        // funktion för att räkna ut totalsumman när en produkt läggs till i varukorgen.
-        function totalPriceAdd() {
+        // funktion för att räkna ut totalsumman när en produkt läggs till i varukorgen. loopar över alla befintliga rader och ränkar ut totalsumman
+        function getTotalCost() {
             let totalPrice = 0;
             $(".cart-row")
                 .find(".product-price")
@@ -52,44 +72,22 @@ $(document).ready(function() {
                 "<strong>SUMMA:</strong>" + totalPrice + "<br>";
         }
 
-        //click function för remove button
-        $(".remove-btn").click(function(event) {
-            event.preventDefault();
-            $("#cart-list").remove($(this));
-            totalPriceRemove();
+        //funktion för ta bort knapp
+        function removeCartItem(event) {
+            let buttonClicked = event.target;
+            buttonClicked.parentElement.remove();
+            //funktionen som räknar ut totalsumman körs varje gång en produkt tas bort ur varukorgen
+            getTotalCost();
+        }
+        //tar bort alla produkter ur listan.
+        $("#remove-all").click(function() {
+            $("ul").empty();
+            getTotalCost();
         });
     });
-
+    //När man klickar på beställ så tas samtliga produkter bort ur varukorgen och man får en alert som tackar för köpet
     $("#order").click(function(event) {
         $("li").remove();
         alert("Tack för din beställning!");
     });
 });
-
-// $(".btn").click(add);
-// function add() {
-//     let $list = $("ul");
-//     let $card = document.getElementsByClassName("card");
-//     console.log($card);
-//     let li = "<li>" + $card + "</li>";
-//     $list.append(li);
-// }
-
-//första koden för att räkna ut totalsumman
-// let cartRows = document.getElementsByClassName("cart-row");
-// let total = 0;
-// let priceEl = 0;
-// let price = 0;
-// let thePrice = 0;
-
-// // $.each(cartRows, function(i) {
-// for (let i = 0; i < cartRows.length; i++) {
-//     // let cartRow = cartRows[i];
-//     thePrice = $(".product-price");
-//     priceEl = thePrice.text();
-//     // console.log(priceEl);
-//     price = parseFloat(priceEl);
-//     total += price;
-//     console.log(total);
-// }
-// document.getElementById("total").innerHTML = "Total: " + total;

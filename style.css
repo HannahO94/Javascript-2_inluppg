@@ -7,23 +7,54 @@
 body {
     font-family: "Rubik", sans-serif;
 }
-
+header {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
 h1 {
+    align-self: center;
     text-align: center;
+    color: white;
+    border-bottom: 10px solid orange;
 }
 
 img {
-    max-width: 500px;
-    max-height: 300px;
+    max-width: 100%;
+    max-height: 100%;
 }
 #product-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 20%;
     grid-auto-flow: row;
-    grid-gap: 20px;
-    padding-left: 20px;
+    grid-gap: 30px;
+    padding: 50px;
+    justify-content: center;
 }
 #cart-container {
     grid-row: 1 / span 4;
     grid-column: 4;
+}
+.btn {
+    max-width: 70px;
+}
+.remove-btn {
+    margin-left: 20px;
+}
+.product-card {
+    padding: 5%;
+    align-self: stretch;
+    box-shadow: 3px 5px 10px -4px rgba(92, 92, 92, 1);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+li {
+    border: 1px solid orange;
+    list-style: none;
+    padding: 5%;
+}
+input {
+    width: 40px;
 }
