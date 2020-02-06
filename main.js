@@ -101,10 +101,10 @@ $(document).ready(function() {
     });
     //När man klickar på beställ så tas samtliga produkter bort ur varukorgen och man får en alert som tackar för köpet
     $("#order").click(function(event) {
-        //Börjar testa att göra objekt av alla list items och pusha in dem i array. Får endast in ett objekt i arrayen
-        //börjar här
+        //gör objekt av alla list items och pushar in dem i array.
         let arrayStorage = [];
-        let $listOfProducts = $("#cart-list");
+        let $listOfProducts = $(".cart-row");
+        let totalCost = $("#total").text();
 
         $($listOfProducts).each(function() {
             let $productName = $(this)
@@ -123,9 +123,11 @@ $(document).ready(function() {
             };
             arrayStorage.push(products);
         });
-        console.log(arrayStorage);
-        //Slutar här
-        //
+
+        // Sparar arrayen i localStorage
+        localStorage.setItem("arrayStorage", JSON.stringify(arrayStorage));
+        localStorage.setItem("totalCost", JSON.stringify(totalCost));
+
         $("li").remove();
         $("#total").html("<strong>SUMMA:</strong>");
         alert("Tack för din beställning!");
@@ -136,23 +138,6 @@ $(document).ready(function() {
 // function getTotalCost() {
 //     let totalPrice = 0;
 //     $(".cart-row")
-//         .find(".product-price")
-//         .each(function() {
-//             totalPrice += parseFloat($(this).html());
-//         });
-//     document.getElementById("total").innerHTML =
-//         "<strong>SUMMA:</strong>" + totalPrice + "<br>";
-// }
-
-// test med vanilla js
-// function getTotalCost() {
-//     let totalPrice = 0;
-//      let cartrow = getElementByClassName("cart-row")
-//      for (let i = 0; 1 < cartrow.length; i++){
-//          let $prodprice = cartRow[i].getElementByClassName("product-price")
-//          let $prodqty = cartRow[i].find("input").val()
-//      }
-//
 //         .find(".product-price")
 //         .each(function() {
 //             totalPrice += parseFloat($(this).html());
