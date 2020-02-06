@@ -38,9 +38,7 @@ $(document).ready(function() {
             // antal produkter som man valt vid köpen hämtas ovan och skickas med till det nya inputfältet som skapas i list itemet i variabeln productQty
             $("#cart-list").append(
                 "<li class='cart-row'>" +
-                    "<span class='product-name'>" +
                     litext.text() +
-                    "</span>" +
                     "<span class='product-price'>" +
                     liprice.text() +
                     "</span>" +
@@ -101,31 +99,6 @@ $(document).ready(function() {
     });
     //När man klickar på beställ så tas samtliga produkter bort ur varukorgen och man får en alert som tackar för köpet
     $("#order").click(function(event) {
-        //Börjar testa att göra objekt av alla list items och pusha in dem i array. Får endast in ett objekt i arrayen
-        //börjar här
-        let arrayStorage = [];
-        let $listOfProducts = $("#cart-list");
-
-        $($listOfProducts).each(function() {
-            let $productName = $(this)
-                .find(".product-name")
-                .html();
-            let $productPrice = $(this)
-                .find(".product-price")
-                .html();
-            let $productQty = $(this)
-                .find("input")
-                .val();
-            let products = {
-                name: $productName,
-                price: $productPrice,
-                quantity: $productQty
-            };
-            arrayStorage.push(products);
-        });
-        console.log(arrayStorage);
-        //Slutar här
-        //
         $("li").remove();
         $("#total").html("<strong>SUMMA:</strong>");
         alert("Tack för din beställning!");
