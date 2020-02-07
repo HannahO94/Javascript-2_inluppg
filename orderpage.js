@@ -1,11 +1,14 @@
 $(document).ready(function() {
     let arrayStorage = JSON.parse(localStorage.getItem("arrayStorage"));
     let totalCost = JSON.parse(localStorage.getItem("totalCost"));
-    console.log(arrayStorage);
-    console.log(totalCost);
+    let $orderedProducts = $("#ordered-products")
+
     for (let i = 0; i < arrayStorage.length; i++) {
-        $("#ordered-products").append(
+        $($orderedProducts).append(
             "<li class='ordered-row'>" +
+            "<div class='ordered-img'><img class='card-img-top image product-image'src='" +
+                arrayStorage[i].image +
+                    "'></div>" +
                 "<span class='product-name'>" +
                 arrayStorage[i].name +
                 "</span>" +
@@ -20,4 +23,5 @@ $(document).ready(function() {
         );
     }
     $("#ordered-products").append(totalCost);
+    localStorage.clear()
 });

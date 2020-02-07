@@ -1,4 +1,21 @@
-body {
-    padding-left: 70px;
-    padding-top: 70px;
+header {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+h1 {
+    align-self: center;
+    text-align: center;
+    color: white;
+    border-bottom: 10px solid orange;
+}
+main {
+    padding-left: 40px;
+}
+.ordered-img {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
 }
