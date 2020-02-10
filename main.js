@@ -90,7 +90,7 @@ $(document).ready(function() {
             });
             //lägger till den nya totalen på sidan
             document.getElementById("total").innerHTML =
-                "<strong>SUMMA:</strong>" + totalPrice + "<br>";
+                "<strong>SUMMA: </strong>" + totalPrice + "<br>";
         }
 
         //funktion för att ta bort item ur varukorgen. tittar på knappens parent element vilket är list elementet och tar bort det

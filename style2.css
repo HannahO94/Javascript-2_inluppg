@@ -1,3 +1,7 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
 header {
     height: 300px;
     display: flex;
@@ -13,9 +17,24 @@ h1 {
 }
 main {
     padding-left: 40px;
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+    
 }
-.ordered-img {
+h2 {
+    text-align: center;
+}
+.image-container {
     width: 70px;
     height: 70px;
-    display: inline-block;
+    position: relative;
+}
+.product-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+table {
+    /* grid-auto-flow: row; */
 }

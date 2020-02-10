@@ -5,23 +5,23 @@ $(document).ready(function() {
 
     for (let i = 0; i < arrayStorage.length; i++) {
         $($orderedProducts).append(
-            "<li class='ordered-row'>" +
-            "<div class='ordered-img'><img class='card-img-top image product-image'src='" +
+            "<tr class='ordered-row'>" +
+            "<td class='ordered-img'><div class='image-container'><img class='card-img-top image product-image'src='" +
                 arrayStorage[i].image +
-                    "'></div>" +
-                "<span class='product-name'>" +
+                    "'></div></td>" +
+                "<td class='product-name'>" +
                 arrayStorage[i].name +
-                "</span>" +
-                "<span class='product-price'>" +
+                "</td>" +
+                "<td class='product-price'>" +
                 arrayStorage[i].price +
-                "</span>" +
                 "<span>kr</span>" +
-                "<span> " +
+                "</td>" + 
+                "<td> " +
                 arrayStorage[i].quantity +
-                "st<span/>" +
-                "</li>"
+                "st</td>" +
+                "</tr>"
         );
     }
-    $("#ordered-products").append(totalCost);
+    $("#ordered-products").append(totalCost + "<span> kr </span>");
     localStorage.clear()
 });
