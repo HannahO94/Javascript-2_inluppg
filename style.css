@@ -58,4 +58,7 @@ li {
 input {
     width: 40px;
 }
+.image-container {
+    display: none;
+}
 
