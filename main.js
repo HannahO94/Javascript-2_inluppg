@@ -36,7 +36,7 @@ $(document).ready(function() {
             let $itemPrice = $productParent.find(".price");
             //sparar ner varje bilds url
             let $itemImage = $productParent.find("img").attr("src");
-            
+
             //hittar input för hur många av produkten som ska köpas.
             let $itemQty = $productParent.find("input").val();
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     $itemQty +
                     '" class="input-qty" />' +
                     //lägger in bildens url i istan med css display none.
-                    "<p class='image-container'>" + 
+                    "<p class='image-container'>" +
                     $itemImage +
                     "</p>" +
                     '<button class="remove-btn">Ta bort</button>' +
@@ -112,19 +112,18 @@ $(document).ready(function() {
     //När man klickar på beställ så tas samtliga produkter bort ur varukorgen och man får en alert som tackar för köpet
     $("#order").click(function() {
         let $cartRow = $(".cart-row");
-        if($cartRow.length == 0){
+        if ($cartRow.length == 0) {
             //validerar så det finns produkter i varukorgen innan man kan gå vidare till beställningsbekräftelsen
             alert("Din varukorg är tom");
-            return false
-        }
-        else{
-        storeToLocalStorage()
-        $("li").remove();
-        $("#total").html("<strong>SUMMA: 0 </strong>");
-        alert("Tack för din beställning!");
+            return false;
+        } else {
+            storeToLocalStorage();
+            $("li").remove();
+            $("#total").html("<strong>SUMMA: 0 </strong>");
+            alert("Tack för din beställning!");
         }
     });
-    function storeToLocalStorage () {
+    function storeToLocalStorage() {
         //funktion för att lagra produktinformation i localstorage så att det ska kunna hämtas upp på bekräftelsesidan.
         let arrayStorage = [];
         let $cartRow = $(".cart-row");
@@ -133,7 +132,6 @@ $(document).ready(function() {
 
         //kollar på alla list-items i varukorgen och hittar namn, pris, bild och antal. sparar ner i variabler som ska kunna läggas in i objektet
         $($cartRow).each(function() {
-
             let $productName = $(this)
                 .find(".product-name")
                 .html();
@@ -143,10 +141,12 @@ $(document).ready(function() {
             let $productQty = $(this)
                 .find("input")
                 .val();
-            //hittar den gömda bild url:en i varukorgen. 
-            let $productImage = $(this).find(".image-container").text()  
+            //hittar den gömda bild url:en i varukorgen.
+            let $productImage = $(this)
+                .find(".image-container")
+                .text();
 
-            //gör objekt av alla list items 
+            //gör objekt av alla list items
             let products = {
                 name: $productName,
                 price: $productPrice,
@@ -156,22 +156,10 @@ $(document).ready(function() {
             //pushar in objektet i arrayen.
             arrayStorage.push(products);
         });
-    
+
         // Sparar arrayen i localStorage, ger den en key så man kan komma åt den, stringify konverterar ett javascript value till en json sträng
         localStorage.setItem("arrayStorage", JSON.stringify(arrayStorage));
-        //sparar totalsumman i localstorge, samma sak görs med den som med arrayen. 
+        //sparar totalsumman i localstorge, samma sak görs med den som med arrayen.
         localStorage.setItem("totalCost", JSON.stringify($totalCost));
     }
 });
-
-// så här såg getTotalCost ut från början.
-// function getTotalCost() {
-//     let totalPrice = 0;
-//     $(".cart-row")
-//         .find(".product-price")
-//         .each(function() {
-//             totalPrice += parseFloat($(this).html());
-//         });
-//     document.getElementById("total").innerHTML =
-//         "<strong>SUMMA:</strong>" + totalPrice + "<br>";
-// }
