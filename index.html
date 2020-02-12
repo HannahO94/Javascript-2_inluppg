@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="style.css" />
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous"
-        />
-        <link
-            href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-            rel="stylesheet"
-        />
-        <title>Projektarbete</title>
-    </head>
-    <body>
-        <header>
-            <div>
-                <img src="" alt="" />
-                <h1>Kamerarullar</h1>
-            </div>
-        </header>
-        <main>
-            <section id="product-container">
-                <aside id="cart-container">
-                    <h2>Varukorg</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <title>Projektarbete</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">
+          <img src="./images/extra2.png" class="logo-pic" alt="">
+        </div>
 
-                    <ul id="cart-list"></ul>
-                    <strong id="total">SUMMA:</strong>
-                    <br />
-                    <button class="btn-warning">
-                        <a href="order.html" id="order" class="btn-warning"
-                            >Beställ</a
-                        >
-                    </button>
-                    <button id="remove-all">Töm varukorgen</button>
-                </aside>
-            </section>
+        <h1>ANALOG FILM</h1>
 
-            <a href="products.json" target="_blank">JSON-fil</a>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="main.js"></script>
-        </main>
-    </body>
+      </header>
+
+      <section id="product-container">
+
+        <aside id="cart-container">
+          <h2>VARUKORG</h2>
+          <ul id="cart-list"></ul>
+          <span id="total"><strong>SUMMA:</strong></span><br>
+          <button id="order" class="btn-order"><a href="order.html" class="order-link">Beställ</a></button>
+          <button id="remove-all" class="remove-all">Töm Varukorgen
+
+          </button>
+        </aside>
+       
+      </section>
+      
+    </main>
+    <footer class="footer">
+      <a href="products.json" class="json-link"> --> JSON <-- </a>
+      <p class="footer-text">Projekt JavaScript2</p>
+      <p class="footer-text">AnaMaria, Hannah & Madeleine FEND19</p>
+
+    </footer>
+
+    <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+    <script src="main.js"></script>
+  </body>
 </html>

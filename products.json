@@ -8,37 +8,37 @@
         },
         {
             "id": 2,
-            "name": "KODAK GOLD 135/24 200",
+            "name": "Kodak Gold 200 135/24",
             "price": "59",
             "img": "./images/2-KODAKGOLD13524200.jpg"
         },
         {
             "id": 3,
-            "name": "KODAK Ektar 100 135/36",
+            "name": "Kodak Ektar 100 135/36",
             "price": "120",
             "img": "./images/3-KODAKEktar10013536.jpg"
         },
         {
             "id": 4,
-            "name": "KODAK Portra 160 135/36",
+            "name": "Kodak Portra 160 135/36",
             "price": "109",
             "img": "./images/4-KODAKPortra16013536.jpg"
         },
         {
             "id": 5,
-            "name": "CineStill Xpro C-41 800 Tungsten 135/36",
+            "name": "CineStill 800 135/36",
             "price": "139",
             "img": "./images/5-CineStillXproC-41800Tungsten13536.jpg"
         },
         {
             "id": 6,
-            "name": "ILFORD HARMAN SFX 200 135/36",
+            "name": "Ilford Harman SFX 200 135/36",
             "price": "109",
             "img": "./images/6-ILFORDHARMANSFX20013536.jpg"
         },
         {
             "id": 7,
-            "name": "Kodak P3200 Tmax T-Max 3200 135-36",
+            "name": "Kodak P3200 T-Max 135/36",
             "price": "130",
             "img": "./images/7-KodakP3200TmaxT-Max3200135-36.jpeg"
         },
@@ -56,7 +56,7 @@
         },
         {
             "id": 10,
-            "name": "EKTACHROME E100 36X1-DIA/FILM",
+            "name": "Ektachrome E100 135/36",
             "price": "199",
             "img": "./images/10-EKTACHROMEE10036X1-DIAFILM.jpg"
         }
