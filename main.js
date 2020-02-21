@@ -20,7 +20,7 @@ $(document).ready(function() {
                     " st" +
                     "<br>" +
                     "<br>" +
-                    '<button class="btn btn-warning">Köp</button>' +
+                    '<button class="btn btn-warning">Köp </button>' +
                     "</div>"
             );
         });

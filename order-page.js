@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         document.getElementById("receipt-total").innerHTML =
             "<span><h3>" + $totalCost;
-        +"kr" + "</h3></span>";
+        +"kr " + "</h3></span>";
     }
 
     localStorage.clear();
